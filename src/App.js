@@ -4,9 +4,7 @@ import SongGrid from "./components/SongGrid";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 
-//import Home from "./pages/Home";
-//import Shows from "./pages/Shows";
-
+// These to be added to a separate page
 const songs = [
   { id: 1, title: "Time Worth Wasting", spotifyId: "4cTM80qdJY6QZeFkgW2EGW" },
   { id: 2, title: "Next to Me", spotifyId: "4Z14v4HiY6itmTC3D8rxtK" },
@@ -16,6 +14,7 @@ const songs = [
 function App() {
   return (
     <>
+    <div className="App-background">
       <Router>
         <Header />
         <Routes>
@@ -32,8 +31,8 @@ function App() {
           tellus duis. Pretium tellus duis convallis tempus leo eu aenean.
         </h3>
       </div>
-      <SongGrid songs={songs} />
-    </>
+      </div>
+    </> 
   );
 }
 
