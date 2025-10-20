@@ -1,5 +1,5 @@
 .App {
-  text-align: center;         
+  text-align: center;
 }
 
 body::before {
@@ -10,7 +10,7 @@ body::before {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("./images/window.png");
   background-size: cover;
   background-position: center;
@@ -25,7 +25,7 @@ h1 {
 hr {
   border: none;
   border-bottom: 2px solid grey;
-  margin: 20px 0; 
+  margin: 20px 0;
 }
 
 /* Header styles */
@@ -62,7 +62,7 @@ hr {
   text-decoration: none;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 1.5rem;        
+  padding-bottom: 1.5rem;
   position: relative;
 }
 
@@ -85,8 +85,83 @@ hr {
 }
 
 
-/* Song Cards */
+/* --- Hamburger icon --- */
+.Hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 101;
+}
 
+.Hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation */
+.Hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.Hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.Hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* --- Mobile menu --- */
+@media (max-width: 768px) {
+  .Header-link-group {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 11rem;
+    right: 0;
+    gap: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.95);
+    max-height: 0;
+    overflow: hidden;
+    border: none;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+
+  .Header-link-group.show {
+    max-height: 300px;
+    border-bottom: 2px solid rgb(2, 105, 109);
+    border-top: 2px solid rgb(2, 105, 109);
+  }
+
+  .Hamburger {
+    display: flex;
+  }
+
+  .Header-link {
+    display: block;
+    width: 100%;
+    line-height: 1.2rem;
+    padding: 1rem 0;
+    margin: 0;
+    border-top: 1px solid rgb(2, 105, 109);
+    border-bottom: 1px solid rgb(2, 105, 109);
+    color: white;
+    text-align: center;
+  }
+
+  .Header-link:hover {
+    color: rgb(2, 105, 109);
+  }
+}
+
+
+/* Song Cards */
 /* Grid container */
 .Song-grid {
   display: flex;
@@ -101,7 +176,7 @@ hr {
 .Song-card {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s;
 }
 
@@ -127,6 +202,6 @@ hr {
   color: white;
 }
 
-.Description {  
+.Description {
   color: grey;
 }

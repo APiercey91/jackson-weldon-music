@@ -1,25 +1,34 @@
-import React from "react";
-import "../App.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/jwlogo.PNG";
+import "../App.css";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    // <header style={styles.header}>
     <header className="Header">
-      {/* <h1 className="Header-title">Jackson Weldon Music</h1> */}
       <Link to="/">
         <img src={logo} alt="Jackson Weldon Music" className="Header-logo" />
       </Link>
-      <hr />
-      <nav className="Header-link-group">
-        <Link className="Header-link" to="/">
+      <hr/>
+      
+      <div
+        className={`Hamburger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav className={`Header-link-group ${menuOpen ? "show" : ""}`}>
+        <Link className="Header-link" to="/" onClick={() => setMenuOpen(false)}>
           HOME
         </Link>
-        <Link className="Header-link" to="/">
+        <Link className="Header-link" to="/shows" onClick={() => setMenuOpen(false)}>
           SHOWS
         </Link>
-        <Link className="Header-link" to="/">
+        <Link className="Header-link" to="/contact" onClick={() => setMenuOpen(false)}>
           CONTACT
         </Link>
       </nav>
