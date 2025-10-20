@@ -80,3 +80,50 @@ hr {
 .Header-link:hover {
   color: white;
 }
+
+
+/* Song Cards */
+
+/* Grid container */
+.Song-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+  padding: 20px;
+  padding-top: 4rem;
+  justify-content: center;
+}
+
+/* Individual card wrapper */
+.Song-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.Song-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Title/Description */
+.Title-container {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Title {
+  font-size: 4rem;
+  color: white;
+}
+
+.Description {  
+  color: grey;
+}
