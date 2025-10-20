@@ -2,17 +2,19 @@
   text-align: center;         
 }
 
-html {
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
   background-image:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url("./images/window.png");
-  background-size: cover;    
-  background-position: center; 
-  background-repeat: no-repeat; 
-  min-height: 100vh;  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 h1 {
